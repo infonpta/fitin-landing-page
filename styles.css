@@ -151,7 +151,7 @@ section {
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  background: var(--dark) url('https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=1600&h=900&fit=crop&crop=center') no-repeat center center;
+  background: var(--dark) no-repeat center center;
   background-size: cover;
 }
 
