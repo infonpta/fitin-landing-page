@@ -181,22 +181,59 @@ section {
   margin-bottom: 24px;
 }
 
-.hero h1 {
+.hero__title {
   color: var(--white);
   font-weight: 700;
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  letter-spacing: -1px;
-  margin-bottom: 16px;
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  letter-spacing: -2px;
+  line-height: 1.05;
+  margin-bottom: 20px;
+  animation: heroFadeIn 1s ease-out 0.2s both;
+}
+
+.hero__accent {
+  background: rgba(42, 157, 143, 0.25);
+  padding: 0.05em 0.25em;
+  border-radius: 0.15em;
+  color: var(--white);
 }
 
 .hero__subtitle {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1.125rem;
-  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  max-width: 540px;
+  margin: 0 auto 36px;
+  line-height: 1.6;
+  animation: heroFadeIn 1s ease-out 0.5s both;
+}
+
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  animation: heroFadeIn 1s ease-out 0.8s both;
 }
 
 .hero .btn {
   font-size: 0.8125rem;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Scroll indicator */
@@ -312,6 +349,124 @@ section {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
 }
+
+/* ========================================
+   Journey Roadmap
+   ======================================== */
+.journey {
+  background: var(--dark);
+  padding: 48px 24px;
+  overflow: hidden;
+}
+
+.journey__roadmap {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  height: 140px;
+}
+
+.journey__path {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+}
+
+.journey__path-fill {
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+  transition: stroke-dashoffset 0.05s linear;
+}
+
+.journey__milestones {
+  position: absolute;
+  inset: 0;
+}
+
+.milestone {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.milestone.visible {
+  opacity: 1;
+}
+
+.milestone__dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--teal);
+  background: var(--dark);
+  position: relative;
+  z-index: 2;
+}
+
+.milestone--complete .milestone__dot {
+  background: var(--teal);
+  box-shadow: 0 0 12px rgba(42, 157, 143, 0.4);
+}
+
+.milestone--active .milestone__dot {
+  background: var(--teal);
+  animation: milestonePulse 2s ease-in-out infinite;
+}
+
+.milestone--pending .milestone__dot {
+  border-color: rgba(42, 157, 143, 0.3);
+  background: transparent;
+}
+
+.milestone__label {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 16px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.milestone--active .milestone__label {
+  color: var(--teal);
+  border-color: rgba(42, 157, 143, 0.3);
+  background: rgba(42, 157, 143, 0.1);
+}
+
+@keyframes milestonePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(42, 157, 143, 0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(42, 157, 143, 0); }
+}
+
+/* ========================================
+   Scroll Animations
+   ======================================== */
+.anim-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.anim-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children in stats bar */
+.stats-bar .stat:nth-child(2) { transition-delay: 0.1s; }
+.stats-bar .stat:nth-child(3) { transition-delay: 0.2s; }
+.stats-bar .stat:nth-child(4) { transition-delay: 0.3s; }
 
 /* ========================================
    Sticky CTA Bar
@@ -790,5 +945,33 @@ section {
   .hero {
     min-height: 100svh;
     background-attachment: scroll;
+  }
+
+  .hero__title {
+    letter-spacing: -1px;
+  }
+
+  .hero__ctas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__ctas .btn {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  .journey {
+    padding: 32px 16px;
+  }
+
+  .journey__roadmap {
+    height: 160px;
+  }
+
+  .milestone__label {
+    font-size: 0.6875rem;
+    padding: 4px 10px;
   }
 }

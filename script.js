@@ -6,12 +6,12 @@
   'use strict';
 
   // --- Sticky CTA Bar ---
-  const stickyBar = document.getElementById('stickyBar');
-  const hero = document.getElementById('hero');
-  const formSection = document.getElementById('form-section');
+  var stickyBar = document.getElementById('stickyBar');
+  var hero = document.getElementById('hero');
+  var formSection = document.getElementById('form-section');
 
   if (stickyBar && hero && formSection) {
-    const heroObserver = new IntersectionObserver(
+    var heroObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) {
@@ -24,7 +24,7 @@
       { threshold: 0 }
     );
 
-    const formObserver = new IntersectionObserver(
+    var formObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
@@ -37,6 +37,61 @@
 
     heroObserver.observe(hero);
     formObserver.observe(formSection);
+  }
+
+  // --- Scroll-Triggered Animations ---
+  var animElements = document.querySelectorAll('.anim-fade');
+  if (animElements.length) {
+    var animObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            animObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    animElements.forEach(function (el) {
+      animObserver.observe(el);
+    });
+  }
+
+  // --- Journey Roadmap Path Animation ---
+  var journeyPath = document.getElementById('journeyPath');
+  var journeySection = document.querySelector('.journey');
+  var milestones = document.querySelectorAll('.milestone');
+
+  if (journeyPath && journeySection) {
+    var pathTotalLength = journeyPath.getTotalLength();
+    journeyPath.style.strokeDasharray = pathTotalLength;
+    journeyPath.style.strokeDashoffset = pathTotalLength;
+
+    function updateJourneyPath() {
+      var rect = journeySection.getBoundingClientRect();
+      var windowHeight = window.innerHeight;
+      var sectionTop = rect.top;
+      var sectionHeight = rect.height;
+
+      // Calculate progress: 0 when section enters, 1 when section leaves
+      var progress = 1 - (sectionTop / (windowHeight * 0.6));
+      progress = Math.max(0, Math.min(1, progress));
+
+      // Draw the path
+      journeyPath.style.strokeDashoffset = pathTotalLength * (1 - progress);
+
+      // Show milestones at different thresholds
+      milestones.forEach(function (m, i) {
+        var threshold = (i + 1) * 0.2;
+        if (progress >= threshold) {
+          m.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateJourneyPath, { passive: true });
+    updateJourneyPath(); // Run once on load
   }
 
   // --- Form Handling ---
