@@ -260,3 +260,46 @@ section {
   padding: 10px 24px;
   font-size: 0.75rem;
 }
+
+/* ========================================
+   Section 2: The Experience
+   ======================================== */
+.experience {
+  background: var(--cream);
+}
+
+.image-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: var(--border-warm);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.experience__text p {
+  max-width: 500px;
+}
+
+.key-points {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.key-point {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.key-point__icon {
+  flex-shrink: 0;
+}
