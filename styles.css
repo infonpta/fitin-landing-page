@@ -585,3 +585,77 @@ section {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.3);
 }
+
+/* ========================================
+   Responsive
+   ======================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  :root {
+    --section-padding: 80px 24px;
+  }
+
+  .two-col {
+    gap: 40px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 60px 20px;
+  }
+
+  .two-col {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .two-col--reverse {
+    flex-direction: column;
+  }
+
+  .experience__image,
+  .difference__image {
+    order: -1;
+  }
+
+  .image-placeholder {
+    aspect-ratio: 16 / 9;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .form-section__form {
+    padding: 24px;
+  }
+
+  .offer__price {
+    font-size: 2rem;
+  }
+
+  .footer__inner {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer__legal {
+    text-align: left;
+  }
+
+  .sticky-bar__inner {
+    padding: 10px 16px;
+  }
+
+  .btn-sm {
+    padding: 8px 16px;
+  }
+
+  .hero {
+    min-height: 100svh;
+  }
+}
