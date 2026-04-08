@@ -168,6 +168,7 @@ section {
   z-index: 2;
   max-width: 700px;
   padding: 24px;
+  margin-bottom: 60px;
 }
 
 .hero__logo {
@@ -333,13 +334,10 @@ section {
    Journey Roadmap (inside hero bottom)
    ======================================== */
 .journey {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   z-index: 3;
-  padding: 0 24px 32px;
-  background: linear-gradient(to top, rgba(35, 30, 25, 0.85) 0%, transparent 100%);
+  padding: 0 24px 40px;
+  margin-top: -20px;
 }
 
 .journey__roadmap {
