@@ -153,6 +153,7 @@ section {
   overflow: hidden;
   background: var(--dark) no-repeat center center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .hero__overlay {
@@ -788,5 +789,6 @@ section {
 
   .hero {
     min-height: 100svh;
+    background-attachment: scroll;
   }
 }
