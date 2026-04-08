@@ -1,0 +1,141 @@
+/* ========================================
+   FITIN "Invest in You" Landing Page
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@300;400;700&display=swap');
+
+/* --- Reset --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- Custom Properties --- */
+:root {
+  --dark: #2a2a2a;
+  --teal: #2a9d8f;
+  --teal-hover: #238b7f;
+  --cream: #f7f5f2;
+  --warm-neutral: #f0ece7;
+  --white: #ffffff;
+  --text-primary: #2a2a2a;
+  --text-secondary: #6b6560;
+  --border-warm: #e0dbd5;
+  --focus-cream: #f5f0ea;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --max-width: 1200px;
+  --section-padding: 100px 24px;
+  --transition: 0.2s ease;
+}
+
+/* --- Typography --- */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 24px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  margin-bottom: 12px;
+}
+
+p {
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+}
+
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 16px;
+  display: block;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 16px 40px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--teal-hover);
+  transform: translateY(-1px);
+}
+
+/* --- Layout --- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.two-col {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.two-col > * {
+  flex: 1;
+}
+
+section {
+  padding: var(--section-padding);
+}
