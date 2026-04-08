@@ -358,3 +358,41 @@ section {
   padding: 6px 14px;
   border-radius: 20px;
 }
+
+/* ========================================
+   Section 4: The Offer
+   ======================================== */
+.offer {
+  background: var(--warm-neutral);
+  text-align: center;
+}
+
+.offer__content {
+  max-width: 700px;
+}
+
+.offer__heading {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.offer__supporting {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.offer__price {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.offer__qualifier {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
