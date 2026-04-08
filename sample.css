@@ -373,63 +373,70 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ========================================
-   Experience / Bonuses
+   Experience Section
    ======================================== */
 .experience-section {
   padding: 120px 0;
 }
 
-.bonuses {
+.exp-layout {
   display: flex;
-  flex-direction: column;
-  gap: 80px;
-}
-
-.bonus-card {
-  display: flex;
-  gap: 48px;
+  gap: 64px;
   align-items: center;
 }
 
-.bonus-card--reverse {
-  flex-direction: row-reverse;
+.exp-image {
+  flex: 1;
 }
 
-.bonus-card__img {
-  flex: 1;
-  aspect-ratio: 4/3;
-  background-size: cover;
-  background-position: center;
+.exp-image img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
   border-radius: 4px;
 }
 
-.bonus-card__text {
+.exp-text {
   flex: 1;
 }
 
-.bonus-card__num {
-  font-family: var(--font-display);
-  font-size: 4rem;
-  font-weight: 700;
-  color: var(--light-gray);
-  line-height: 1;
-  display: block;
-  margin-bottom: 16px;
-}
-
-.bonus-card__text h3 {
-  font-family: var(--font-display);
-  font-size: 1.75rem;
+.section-label-dark {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
   font-weight: 600;
+  letter-spacing: 3px;
   text-transform: uppercase;
+  color: var(--accent);
   margin-bottom: 16px;
-  color: var(--text);
+  display: block;
 }
 
-.bonus-card__text p {
+.exp-text p {
   color: var(--text-mid);
   font-size: 1rem;
   line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.key-points-dark {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.key-point-dark {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.key-point-dark__check {
+  color: var(--accent);
+  font-weight: 700;
 }
 
 /* ========================================
@@ -520,82 +527,76 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ========================================
-   Difference
+   Difference Section
    ======================================== */
 .difference-section {
   padding: 120px 0;
-}
-
-.diff-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-.diff-card {
   background: var(--dark);
-  border: 1px solid var(--light-gray);
-  overflow: hidden;
 }
 
-.diff-card__img {
+.diff-layout {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.diff-image {
+  flex: 1;
+}
+
+.diff-image img {
   width: 100%;
-  aspect-ratio: 16/10;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.4s;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
-.diff-card:hover .diff-card__img {
-  transform: scale(1.05);
+.diff-text {
+  flex: 1;
 }
 
-.diff-card h3 {
+.diff-text p {
+  color: var(--text-mid);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.testimonial-dark {
+  border-left: 3px solid var(--accent);
+  padding-left: 20px;
+  margin: 32px 0 24px;
+}
+
+.testimonial-dark p {
   font-family: var(--font-display);
   font-size: 1.25rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  padding: 24px 24px 12px;
-  color: var(--text);
-}
-
-.diff-card p {
-  padding: 0 24px 24px;
-  color: var(--text-mid);
-  font-size: 0.9375rem;
-  line-height: 1.6;
-}
-
-/* ========================================
-   Testimonial
-   ======================================== */
-.testimonial-section {
-  padding: 100px 0;
-  border-top: 1px solid var(--light-gray);
-  border-bottom: 1px solid var(--light-gray);
-}
-
-.testimonial {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.testimonial p {
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
   font-weight: 300;
-  line-height: 1.3;
+  font-style: italic;
   color: var(--text);
-  margin-bottom: 24px;
+  line-height: 1.4;
 }
 
-.testimonial cite {
+.testimonial-dark cite {
   font-style: normal;
   font-size: 0.875rem;
   color: var(--accent);
-  letter-spacing: 2px;
-  text-transform: uppercase;
+}
+
+.coach-tags-dark {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.coach-tag-dark {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--accent-glow);
+  padding: 6px 14px;
+  border-radius: 20px;
 }
 
 /* ========================================
@@ -709,10 +710,9 @@ a { text-decoration: none; color: inherit; }
 
 .footer__inner {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  text-align: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
 .footer__logo {
@@ -721,11 +721,33 @@ a { text-decoration: none; color: inherit; }
   opacity: 0.6;
 }
 
-.footer__brand p {
+.footer__address {
   color: var(--text-dim);
   font-size: 0.875rem;
-  margin-top: 8px;
+  margin-top: 12px;
+  line-height: 1.6;
 }
+
+.footer__contact p {
+  color: var(--text-mid);
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+}
+
+.footer__social-links {
+  display: flex;
+  gap: 20px;
+  margin-top: 12px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.footer__social-links a {
+  color: var(--text-dim);
+  transition: color 0.2s;
+}
+
+.footer__social-links a:hover { color: var(--accent); }
 
 .footer__links {
   font-size: 0.8125rem;
@@ -736,20 +758,14 @@ a { text-decoration: none; color: inherit; }
 .footer__links a:hover { color: var(--text); }
 .footer__links span { margin: 0 8px; }
 
-.footer__social {
-  display: flex;
-  gap: 20px;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--text-dim);
+.footer__legal {
+  text-align: right;
 }
-
-.footer__social a { transition: color 0.2s; }
-.footer__social a:hover { color: var(--accent); }
 
 .footer__copy {
   font-size: 0.75rem;
   color: rgba(255,255,255,0.25);
+  margin-top: 12px;
 }
 
 .footer__top {
@@ -813,13 +829,10 @@ a { text-decoration: none; color: inherit; }
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .bonus-card,
-  .bonus-card--reverse {
+  .exp-layout,
+  .diff-layout,
+  .diff-layout {
     flex-direction: column;
-  }
-
-  .diff-grid {
-    grid-template-columns: 1fr;
   }
 
   .form-grid {
