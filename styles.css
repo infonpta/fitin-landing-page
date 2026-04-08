@@ -303,3 +303,58 @@ section {
 .key-point__icon {
   flex-shrink: 0;
 }
+
+/* ========================================
+   Section 3: The Difference
+   ======================================== */
+.difference {
+  background: var(--white);
+}
+
+.two-col--reverse {
+  flex-direction: row-reverse;
+}
+
+.difference__text p {
+  max-width: 500px;
+}
+
+.trust-signals {
+  margin-top: 32px;
+}
+
+.testimonial {
+  border-left: 3px solid var(--teal);
+  padding-left: 20px;
+  margin-bottom: 24px;
+}
+
+.testimonial p {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.testimonial cite {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.coach-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.coach-tag {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--teal);
+  background: rgba(42, 157, 143, 0.08);
+  padding: 6px 14px;
+  border-radius: 20px;
+}
