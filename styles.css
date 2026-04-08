@@ -151,8 +151,7 @@ section {
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  /* Placeholder background — swap with real photo later */
-  background: var(--dark) url('') no-repeat center center;
+  background: var(--dark) url('https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=1600&h=900&fit=crop&crop=center') no-repeat center center;
   background-size: cover;
 }
 
@@ -183,7 +182,9 @@ section {
 
 .hero h1 {
   color: var(--white);
-  font-weight: 300;
+  font-weight: 700;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  letter-spacing: -1px;
   margin-bottom: 16px;
 }
 
@@ -217,6 +218,98 @@ section {
 @keyframes scrollPulse {
   0%, 100% { opacity: 0.4; transform: scaleY(1); }
   50% { opacity: 1; transform: scaleY(1.2); }
+}
+
+/* Geometric ring accents */
+.hero__rings {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero__ring {
+  position: absolute;
+  border: 1px solid rgba(42, 157, 143, 0.25);
+  border-radius: 50%;
+}
+
+.hero__ring--1 {
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  right: -100px;
+  animation: ringFloat 8s ease-in-out infinite;
+}
+
+.hero__ring--2 {
+  width: 250px;
+  height: 250px;
+  bottom: -60px;
+  right: 10%;
+  border-color: rgba(42, 157, 143, 0.15);
+  animation: ringFloat 10s ease-in-out infinite reverse;
+}
+
+.hero__ring--3 {
+  width: 180px;
+  height: 180px;
+  top: 20%;
+  left: -40px;
+  border-color: rgba(42, 157, 143, 0.1);
+  animation: ringFloat 12s ease-in-out infinite;
+}
+
+@keyframes ringFloat {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(15px, -15px); }
+}
+
+/* ========================================
+   Stats Bar
+   ======================================== */
+.stats-bar {
+  background: var(--dark);
+  padding: 0;
+}
+
+.stats-bar__inner {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+}
+
+.stat {
+  flex: 1;
+  max-width: 250px;
+  text-align: center;
+  padding: 32px 24px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stat:last-child {
+  border-right: none;
+}
+
+.stat__number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--teal);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat__label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /* ========================================
@@ -278,6 +371,14 @@ section {
   justify-content: center;
   color: var(--text-secondary);
   font-size: 0.875rem;
+}
+
+.experience__image img,
+.difference__image img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .experience__text p {
@@ -623,6 +724,36 @@ section {
 
   .image-placeholder {
     aspect-ratio: 16 / 9;
+  }
+
+  .experience__image img,
+  .difference__image img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .stats-bar__inner {
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    flex: 1 1 45%;
+    border-right: none;
+    padding: 20px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .stat__number {
+    font-size: 2rem;
+  }
+
+  .hero__ring--1 {
+    width: 250px;
+    height: 250px;
+  }
+
+  .hero__ring--2,
+  .hero__ring--3 {
+    display: none;
   }
 
   .form-row {
