@@ -60,22 +60,20 @@
 
   // --- Journey Roadmap Path Animation ---
   var journeyPath = document.getElementById('journeyPath');
-  var journeySection = document.querySelector('.journey');
+  var heroSection = document.getElementById('hero');
   var milestones = document.querySelectorAll('.milestone');
 
-  if (journeyPath && journeySection) {
+  if (journeyPath && heroSection) {
     var pathTotalLength = journeyPath.getTotalLength();
     journeyPath.style.strokeDasharray = pathTotalLength;
     journeyPath.style.strokeDashoffset = pathTotalLength;
 
     function updateJourneyPath() {
-      var rect = journeySection.getBoundingClientRect();
-      var windowHeight = window.innerHeight;
-      var sectionTop = rect.top;
-      var sectionHeight = rect.height;
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      var heroHeight = heroSection.offsetHeight;
 
-      // Calculate progress: 0 when section enters, 1 when section leaves
-      var progress = 1 - (sectionTop / (windowHeight * 0.6));
+      // Progress: 0 at top, 1 when hero is about to scroll out of view
+      var progress = scrollTop / (heroHeight * 0.5);
       progress = Math.max(0, Math.min(1, progress));
 
       // Draw the path
@@ -83,7 +81,7 @@
 
       // Show milestones at different thresholds
       milestones.forEach(function (m, i) {
-        var threshold = (i + 1) * 0.2;
+        var threshold = 0.15 + (i * 0.22);
         if (progress >= threshold) {
           m.classList.add('visible');
         }
