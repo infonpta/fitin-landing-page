@@ -266,6 +266,10 @@ a { text-decoration: none; color: inherit; }
   color: var(--text-main);
 }
 
+.hero__line {
+  display: block;
+}
+
 .hero__title em {
   font-style: normal;
   background: linear-gradient(to right, var(--accent-cyan), var(--accent-pink));
