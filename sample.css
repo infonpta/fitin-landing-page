@@ -271,12 +271,16 @@ a { text-decoration: none; color: inherit; }
 }
 
 .hero__title em {
-  font-style: normal;
+  font-style: italic;
   background: linear-gradient(to right, var(--accent-cyan), var(--accent-pink));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
   display: inline-block;
-  padding-right: 40px; /* prevent clip */
+  padding: 0.05em 0.25em 0.05em 0.05em;
+  margin-right: -0.05em;
+  overflow: visible;
 }
 
 .hero__sub {
