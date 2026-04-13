@@ -268,6 +268,8 @@ a { text-decoration: none; color: inherit; }
 
 .hero__line {
   display: block;
+  line-height: 1.1;
+  overflow: visible;
 }
 
 .hero__title em {
@@ -278,8 +280,8 @@ a { text-decoration: none; color: inherit; }
   -webkit-text-fill-color: transparent;
   color: transparent;
   display: inline-block;
-  padding: 0.05em 0.25em 0.05em 0.05em;
-  margin-right: -0.05em;
+  padding: 0.1em 0.3em 0.15em 0.05em;
+  line-height: 1.15;
   overflow: visible;
 }
 
@@ -404,7 +406,9 @@ a { text-decoration: none; color: inherit; }
   font-weight: 700;
   background: linear-gradient(135deg, #fff, var(--accent-cyan));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
   line-height: 1;
   margin-bottom: 16px;
 }
