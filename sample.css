@@ -9,9 +9,9 @@
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-border-hover: rgba(255, 255, 255, 0.3);
   --glass-blur: blur(24px);
-  --accent-cyan: #00f0ff;
-  --accent-purple: #8a2be2;
-  --accent-pink: #ff0055;
+  --accent-cyan: #2a9d8f;
+  --accent-purple: #1a6b61;
+  --accent-pink: #48c9b0;
   --text-main: #ffffff;
   --text-mid: rgba(255, 255, 255, 0.7);
   --text-dim: rgba(255, 255, 255, 0.5);
@@ -272,7 +272,7 @@ a { text-decoration: none; color: inherit; }
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
-  padding-right: 10px; /* prevent clip */
+  padding-right: 40px; /* prevent clip */
 }
 
 .hero__sub {
