@@ -789,9 +789,11 @@ a { text-decoration: none; color: inherit; }
 
 .footer__inner {
   display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  text-align: center;
 }
 
 .footer__logo { height: 24px; filter: brightness(0) invert(1); opacity: 0.8; }
@@ -965,13 +967,10 @@ a { text-decoration: none; color: inherit; }
   .form-success p { font-size: 0.9375rem; }
 
   /* Footer */
-  .footer { padding: 56px 0 32px; }
-  .footer__inner { flex-direction: column; gap: 32px; text-align: left; }
-  .footer__logo { height: 20px; }
-  .footer__address, .footer__contact p { font-size: 0.8125rem; }
-  .footer__legal { text-align: left; }
-  .footer__legal a, .footer__copy { font-size: 0.75rem; }
-  .footer__top { margin-top: 16px; font-size: 0.75rem; }
+  .footer { padding: 48px 0 32px; }
+  .footer__inner { gap: 20px; }
+  .footer__logo { height: 18px; }
+  .footer__top { margin-top: 0; font-size: 0.75rem; }
 }
 
 /* Extra-small phones */
