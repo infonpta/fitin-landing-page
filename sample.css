@@ -320,10 +320,52 @@ a { text-decoration: none; color: inherit; }
   border-radius: 20px;
 }
 
-.hero__img--1 { width: 300px; height: 420px; top: 8%; right: 3%; transform: rotate(5deg); }
-.hero__img--2 { width: 220px; height: 300px; top: 48%; right: 20%; transform: rotate(-7deg); }
-.hero__img--3 { width: 280px; height: 380px; bottom: 8%; left: 3%; transform: rotate(-5deg); }
-.hero__img--4 { width: 180px; height: 240px; top: 14%; left: 18%; transform: rotate(9deg); opacity: 0.35; }
+.hero__img {
+  --rot: 0deg;
+  --final-opacity: 1;
+  animation: heroDrop 1.1s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.hero__img--1 {
+  width: 300px; height: 420px; top: 8%; right: 3%;
+  --rot: 5deg;
+  animation-delay: 0.2s;
+}
+.hero__img--2 {
+  width: 220px; height: 300px; top: 48%; right: 20%;
+  --rot: -7deg;
+  animation-delay: 0.45s;
+}
+.hero__img--3 {
+  width: 280px; height: 380px; bottom: 8%; left: 3%;
+  --rot: -5deg;
+  animation-delay: 0.35s;
+}
+.hero__img--4 {
+  width: 180px; height: 240px; top: 14%; left: 18%;
+  --rot: 9deg;
+  --final-opacity: 0.35;
+  animation-delay: 0.55s;
+}
+
+@keyframes heroDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-120vh) rotate(var(--rot));
+  }
+  65% {
+    opacity: var(--final-opacity);
+    transform: translateY(18px) rotate(var(--rot));
+  }
+  80% {
+    opacity: var(--final-opacity);
+    transform: translateY(-8px) rotate(var(--rot));
+  }
+  100% {
+    opacity: var(--final-opacity);
+    transform: translateY(0) rotate(var(--rot));
+  }
+}
 
 /* ========================================
    Marquee
