@@ -320,10 +320,10 @@ a { text-decoration: none; color: inherit; }
   border-radius: 20px;
 }
 
-.hero__img--1 { width: 320px; height: 440px; top: 10%; right: 4%; transform: rotate(4deg); }
-.hero__img--2 { width: 240px; height: 320px; top: 50%; right: 28%; transform: rotate(-6deg); }
-.hero__img--3 { width: 280px; height: 380px; bottom: 8%; right: 10%; transform: rotate(10deg); }
-.hero__img--4 { width: 200px; height: 260px; top: 20%; right: 40%; transform: rotate(-10deg); opacity: 0.4; }
+.hero__img--1 { width: 300px; height: 420px; top: 8%; right: 3%; transform: rotate(5deg); }
+.hero__img--2 { width: 220px; height: 300px; top: 48%; right: 20%; transform: rotate(-7deg); }
+.hero__img--3 { width: 280px; height: 380px; bottom: 8%; left: 3%; transform: rotate(-5deg); }
+.hero__img--4 { width: 180px; height: 240px; top: 14%; left: 18%; transform: rotate(9deg); opacity: 0.35; }
 
 /* ========================================
    Marquee
@@ -846,9 +846,9 @@ a { text-decoration: none; color: inherit; }
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .hero__img--1 { width: 220px; height: 300px; }
-  .hero__img--2 { width: 160px; height: 220px; }
-  .hero__img--3 { width: 200px; height: 260px; }
+  .hero__img--1 { width: 200px; height: 280px; top: 8%; right: 3%; }
+  .hero__img--2 { width: 150px; height: 200px; top: 50%; right: 18%; }
+  .hero__img--3 { width: 180px; height: 240px; bottom: 10%; left: 3%; }
   .hero__img--4 { display: none; }
   .exp-layout, .diff-layout { flex-direction: column; gap: 40px; }
   .stats__grid { grid-template-columns: repeat(2, 1fr); }
